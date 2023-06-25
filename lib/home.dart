@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'vocabulary_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +11,17 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
+  final List<Widget> _pages = <Widget>[
+    VocabularyPage(),
+    const Icon(
+      Icons.camera,
+      size: 150,
+    ),
+    const Icon(
+      Icons.chat,
+      size: 150,
+    ),
+  ];
 
   int _selectedIndex = 0;
 
@@ -24,14 +36,21 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Center(child: _pages.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.book_outlined), label: '单词',),
+            icon: Icon(Icons.book_outlined),
+            label: '单词',
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.edit_outlined), label: '训练',),
+            icon: Icon(Icons.edit_outlined),
+            label: '训练',
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outlined), label: '我',),
+            icon: Icon(Icons.person_outlined),
+            label: '我',
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
