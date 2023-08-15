@@ -12,13 +12,13 @@ class Home extends StatefulWidget {
 
 class _Home extends State<Home> {
   final List<Widget> _pages = <Widget>[
-    VocabularyPage(),
+    const VocabularyPage(),
     const Icon(
-      Icons.camera,
+      Icons.chat,
       size: 150,
     ),
     const Icon(
-      Icons.chat,
+      Icons.camera,
       size: 150,
     ),
   ];
@@ -36,7 +36,7 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: _pages.elementAt(_selectedIndex)),
+      body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
