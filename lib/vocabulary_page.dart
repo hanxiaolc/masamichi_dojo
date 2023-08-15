@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'learning_page.dart';
+
 class VocabularyPage extends StatefulWidget {
   const VocabularyPage({super.key});
 
@@ -212,6 +214,11 @@ class _VocabularyPage extends State<VocabularyPage> {
               ),
               onPressed: () {
                 print('开始背单词吧');
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const LearningPage(),
+                  ),
+                );
               }),
         ],
       ),
