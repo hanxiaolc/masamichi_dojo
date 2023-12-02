@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'vocabulary_page.dart';
+import 'dashboard.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
