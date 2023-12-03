@@ -1,10 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:masamichi_dojo/details_page.dart';
-import 'package:masamichi_dojo/review_page.dart';
 
-class LearningPage extends StatelessWidget {
-  const LearningPage({super.key});
+class ReviewPage extends StatelessWidget {
+  const ReviewPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,63 +14,64 @@ class LearningPage extends StatelessWidget {
               Navigator.of(context).pop();
             },
           ),
-          title: const Column(
+          title: const Row(
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  '需新学20',
-                  style: TextStyle(fontSize: 10, color: Colors.grey),
-                ),
+              Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '需新学20',
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '需复习1',
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
+                    ),
+                  )
+                ],
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  '需复习1',
-                  style: TextStyle(fontSize: 10, color: Colors.grey),
-                ),
+              Expanded(
+                  child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Icon(
+                        Icons.check,
+                        size: 10,
+                        color: Colors.grey,
+                      ))),
+              VerticalDivider(
+                width: 15,
+              ),
+              Text(
+                "desirable adj: 有吸引力的；性感的",
+                style: TextStyle(fontSize: 10, color: Colors.grey),
               )
             ],
           ),
         ),
         body: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(25.0),
+            const Padding(
+              padding: EdgeInsets.all(25.0),
               child: SizedBox.expand(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Divider(
+                    Divider(
                       color: Colors.transparent,
                       height: 80,
                     ),
-                    Text.rich(
-                      TextSpan(
-                        style: const TextStyle(fontSize: 20, color: Colors.grey),
-                        children: [
-                          const TextSpan(
-                            text: "He's an",
-                          ),
-                          const TextSpan(
-                            text: " ",
-                          ),
-                          TextSpan(
-                              style: const TextStyle(color: Colors.blue),
-                              text: 'avid',
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  print("pressed");
-                                }),
-                          const TextSpan(
-                            text: " ",
-                          ),
-                          const TextSpan(
-                            text: "collector",
-                          ),
-                        ],
-                      ),
-                    )
+                    Align(
+                        child: Text("avoid",
+                            style:
+                                TextStyle(fontSize: 30, color: Colors.blue))),
+                    Align(
+                        child: Text("/əˈvɔɪd/",
+                            style:
+                            TextStyle(fontSize: 20, color: Colors.grey))),
                   ],
                 ),
               ),
@@ -94,11 +92,6 @@ class LearningPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             print("点击图1");
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const ReviewPage(),
-                              ),
-                            );
                           },
                         ),
                       ),
@@ -111,19 +104,12 @@ class LearningPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             print("点击图2");
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const DetailsPage(),
-                              ),
-                            );
                           },
                         ),
                       )
                     ],
                   ),
-                  const Divider(
-                      height: 25
-                  ),
+                  const Divider(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -153,9 +139,7 @@ class LearningPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Divider(
-                      height: 25
-                  ),
+                  const Divider(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
