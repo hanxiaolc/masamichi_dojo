@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masamichi_dojo/plan_page.dart';
 
 import 'learning_page.dart';
 
@@ -71,7 +72,12 @@ class _VocabularyPage extends State<VocabularyPage> {
                                   style: TextStyle(fontSize: 8),
                                 ),
                                 onPressed: () {
-                                  print('Pressed');
+                                  print('调整计划');
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => const PlanPage(),
+                                    ),
+                                  );
                                 },
                               ),
                             )),

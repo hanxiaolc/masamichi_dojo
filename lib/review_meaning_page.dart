@@ -152,6 +152,7 @@ class ReviewMeaningPage extends StatelessWidget {
               ),
             )
           ],
-        ));
+        )
+    );
   }
 }
