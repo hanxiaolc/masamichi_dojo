@@ -9,8 +9,8 @@ class DetailsPage extends StatelessWidget {
         body: Stack(
       children: [
         Padding(
-          padding: EdgeInsets.all(25.0),
-          child: Column(
+          padding: const EdgeInsets.all(25.0),
+          child: ListView(
             children: [
               const Row(
                 children: [
@@ -95,15 +95,94 @@ class DetailsPage extends StatelessWidget {
                   Text("proofed", style: TextStyle(fontSize: 10)),
                 ],
               ),
-              const Divider(
-                height: 25
-              ),
+              const Divider(height: 25),
               const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     "图文例句",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   )),
+              // const Divider(height: 10, color: Colors.transparent),
+              Row(
+                children: [
+                  const Align(
+                      alignment: Alignment.topLeft,
+                      child: Text.rich(TextSpan(children: [
+                        TextSpan(text: "Many people find sports cars "),
+                        TextSpan(
+                            style: TextStyle(color: Colors.blue),
+                            text: "desirable"),
+                        TextSpan(text: "."),
+                      ]))),
+                  Expanded(
+                      child: Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                        icon: const Icon(Icons.volume_up_outlined,
+                            color: Colors.blue),
+                        onPressed: () {
+                          print("object");
+                        }),
+                  )),
+                ],
+              ),
+              const Align(
+                alignment: Alignment.topLeft,
+                child:
+                    Text("很多人觉得跑车很诱人。", style: TextStyle(color: Colors.grey)),
+              ),
+              const Divider(height: 10, color: Colors.transparent),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Image(
+                  // width: MediaQuery.of(context).size.width * 0.3,
+                  height: 130,
+                  image: NetworkImage(
+                      "https://scontent-nrt1-2.xx.fbcdn.net/v/t1.6435-9/80634969_1427113014156627_869520136279687168_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_ohc=oYXtIJ5WKIsAX-V_-Lh&_nc_ht=scontent-nrt1-2.xx&oh=00_AfDmW7Co_S4O6BfpbqN7kBSndQ8rzVmNnEQuuq_TQPEANw&oe=6592D8B3"),
+                ),
+              ),
+              const Divider(height: 25),
+              const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "词根词缀",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+              const Divider(height: 10, color: Colors.transparent),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text("desir=desirede渴望 + able能......的 -> 值得要的"),
+              ),
+              const Divider(height: 25),
+              const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "英文释义",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+              const Divider(height: 10, color: Colors.transparent),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                    "(of a person) causing other people to feel sexual desire"),
+              ),
+              const Divider(height: 25),
+              Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: 85,
+                  height: 17,
+                  child: OutlinedButton(
+                    child: const Text(
+                      '单词报错',
+                      style: TextStyle(fontSize: 8),
+                    ),
+                    onPressed: () {
+                      print('单词报错');
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -115,66 +194,6 @@ class DetailsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: IconButton(
-                      icon: Image.network(
-                        "https://scontent-nrt1-2.xx.fbcdn.net/v/t1.6435-9/80634969_1427113014156627_869520136279687168_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_ohc=oYXtIJ5WKIsAX-V_-Lh&_nc_ht=scontent-nrt1-2.xx&oh=00_AfDmW7Co_S4O6BfpbqN7kBSndQ8rzVmNnEQuuq_TQPEANw&oe=6592D8B3",
-                        height: MediaQuery.of(context).size.width * 0.35,
-                      ),
-                      onPressed: () {
-                        print("点击图1");
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: IconButton(
-                      icon: Image.network(
-                        "https://scontent-nrt1-2.xx.fbcdn.net/v/t1.6435-9/80634969_1427113014156627_869520136279687168_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_ohc=oYXtIJ5WKIsAX-V_-Lh&_nc_ht=scontent-nrt1-2.xx&oh=00_AfDmW7Co_S4O6BfpbqN7kBSndQ8rzVmNnEQuuq_TQPEANw&oe=6592D8B3",
-                        height: MediaQuery.of(context).size.width * 0.35,
-                      ),
-                      onPressed: () {
-                        print("点击图2");
-                      },
-                    ),
-                  )
-                ],
-              ),
-              const Divider(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: IconButton(
-                      icon: Image.network(
-                        "https://scontent-nrt1-2.xx.fbcdn.net/v/t1.6435-9/80634969_1427113014156627_869520136279687168_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_ohc=oYXtIJ5WKIsAX-V_-Lh&_nc_ht=scontent-nrt1-2.xx&oh=00_AfDmW7Co_S4O6BfpbqN7kBSndQ8rzVmNnEQuuq_TQPEANw&oe=6592D8B3",
-                        height: MediaQuery.of(context).size.width * 0.35,
-                      ),
-                      onPressed: () {
-                        print("点击图3");
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: IconButton(
-                      icon: Image.network(
-                        "https://scontent-nrt1-2.xx.fbcdn.net/v/t1.6435-9/80634969_1427113014156627_869520136279687168_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_ohc=oYXtIJ5WKIsAX-V_-Lh&_nc_ht=scontent-nrt1-2.xx&oh=00_AfDmW7Co_S4O6BfpbqN7kBSndQ8rzVmNnEQuuq_TQPEANw&oe=6592D8B3",
-                        height: MediaQuery.of(context).size.width * 0.35,
-                      ),
-                      onPressed: () {
-                        print("点击图4");
-                      },
-                    ),
-                  )
-                ],
-              ),
-              const Divider(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
                       width: MediaQuery.of(context).size.width * 0.333,
                       child: IconButton(
                           onPressed: () {
@@ -182,19 +201,14 @@ class DetailsPage extends StatelessWidget {
                           },
                           icon: const Icon(Icons.dnd_forwardslash))),
                   SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.333,
-                      child: IconButton(
-                          onPressed: () {
-                            print("高亮");
-                          },
-                          icon: const Icon(Icons.lightbulb))),
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.333,
-                      child: IconButton(
-                          onPressed: () {
-                            print("读出来");
-                          },
-                          icon: const Icon(Icons.volume_up)))
+                      width: MediaQuery.of(context).size.width * 0.667,
+                      child: ElevatedButton(
+                        child: const Text("继续做题"),
+                        onPressed: () {
+                          print("继续做题");
+                          Navigator.of(context).pop();
+                        },
+                      ))
                 ],
               )
             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:masamichi_dojo/details_page.dart';
+import 'package:masamichi_dojo/review_meaning_page.dart';
 import 'package:masamichi_dojo/review_page.dart';
 
 class LearningPage extends StatelessWidget {
@@ -136,6 +137,11 @@ class LearningPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             print("点击图3");
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const ReviewMeaningPage(),
+                              ),
+                            );
                           },
                         ),
                       ),
